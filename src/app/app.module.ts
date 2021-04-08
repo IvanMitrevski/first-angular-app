@@ -4,17 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
     FooterComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

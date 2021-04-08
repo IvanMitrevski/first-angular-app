@@ -1,1 +1,9 @@
 <p>products-list works!</p>
+<div class="products-container" *ngFor="let product of products">
+  <!-- if I want to put dinamical value as source I will use [src]=""  -->
+  <img [src]="product.imageUrl">
+  <div>
+    <div>Name: {{product.name}}</div>
+    <button>Add to cart</button>
+  </div>
+</div>

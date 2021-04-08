@@ -10,16 +10,19 @@ export class ProductItemComponent implements OnInit, OnDestroy {
 
   //This @Input() tells Angular that we want to resend this product as a variable. Check the product-list.component.html to see how I call it
   @Input() product: Product;
+
+  intervalId;
+
   constructor() { }
 
-  //even after we delete the items, this will ngOnInit will continue to console log every 5 seconds
   ngOnInit(): void{
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       console.log("ProductItemComponent - ngOnInit");
     }, 5000);
   }
 
   ngOnDestroy(): void {
+    clearInterval(this.intervalId);
     console.log("ProductItemComponent - OnDestroy");
   }
 

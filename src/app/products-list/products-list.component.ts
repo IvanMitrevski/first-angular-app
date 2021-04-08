@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ProductItemComponent } from './../product-item/product-item.component';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../product';
 import { ProductsService } from '../products.service';
 
@@ -7,8 +8,10 @@ import { ProductsService } from '../products.service';
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css']
 })
-export class ProductsListComponent implements OnInit, OnDestroy {
+export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
   products: Array<Product>;
+
+  @ViewChild(ProductItemComponent) child: ProductItemComponent;
 
   constructor(private productsService: ProductsService) {
   }
@@ -18,6 +21,12 @@ export class ProductsListComponent implements OnInit, OnDestroy {
     console.log('ProductsListComponent - ngOnInit');
     this.products = this.productsService.getProducts();
     console.log('ProductsListComponent - products', this.products);
+
+    console.log("ngOnInit", this.child);
+  }
+
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit", this.child);
   }
 
   deleteProducts(): void {

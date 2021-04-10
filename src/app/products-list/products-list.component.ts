@@ -9,8 +9,10 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
+
   products: Array<Product>;
 
+  //accessing the desired child component through the father component
   @ViewChild(ProductItemComponent) child: ProductItemComponent;
 
   constructor(private productsService: ProductsService) {

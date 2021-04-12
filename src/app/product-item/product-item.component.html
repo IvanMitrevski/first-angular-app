@@ -2,5 +2,5 @@
 <img [src]="product.imageUrl">
 <div>
   <div>Name: {{product.name}}</div>
-  <button>Add to cart</button>
+  <button (click)="addToCart($event)">Add to cart</button>
 </div>

@@ -1,7 +1,10 @@
 <p>products-list works!</p>
 <div class="products-container" *ngFor="let product of products">
 <!-- I use [product] to tell which input I want to use -->
-  <app-product-item [product]="product"></app-product-item>
+  <app-product-item
+      [product]="product"
+      (addedToCart)="updateShoppingCart($event)"
+    ></app-product-item>
 </div>
 
 <button (click)="deleteProducts()">Delete all products</button>

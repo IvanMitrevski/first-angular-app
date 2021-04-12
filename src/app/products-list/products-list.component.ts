@@ -36,7 +36,9 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   //it is called when our component is closed
-  ngOnDestroy(): void{
+  ngOnDestroy(): void{ }
 
+  updateShoppingCart(productId: string) {
+    console.log(productId);
   }
 }

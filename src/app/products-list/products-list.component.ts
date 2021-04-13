@@ -1,5 +1,5 @@
 import { ProductItemComponent } from './../product-item/product-item.component';
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Product } from '../product';
 import { ProductsService } from '../products.service';
 
@@ -12,8 +12,12 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   products: Array<Product>;
 
-  //accessing the desired child component through the father component
-  @ViewChild(ProductItemComponent) child: ProductItemComponent;
+  //accessing the first stance of the child component through the father component
+  //@ViewChild(ProductItemComponent) child: ProductItemComponent;
+
+  //Access all the the child components when they appear on screen
+  //check the ngAfterViewInit console log
+  @ViewChildren(ProductItemComponent) children: QueryList<ProductItemComponent>;
 
   numberOfAddedProducts = 0;
 
@@ -26,11 +30,11 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
     this.products = this.productsService.getProducts();
     console.log('ProductsListComponent - products', this.products);
 
-    console.log("ngOnInit", this.child);
+    console.log("ngOnInit", this.children);
   }
 
   ngAfterViewInit(): void {
-    console.log("ngAfterViewInit", this.child);
+    console.log("ngAfterViewInit", this.children);
   }
 
   deleteProducts(): void {
@@ -47,5 +51,12 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   updateShoppingCartN(productName: string) {
     console.log(productName);
+
   }
+
+  AddSecondToCart() {
+	  let secondChild:ProductItemComponent = this.children.get(1);
+	  secondChild.addToCart({} as Event);
+  }
+
 }

@@ -1,5 +1,4 @@
-.products-container {
-  display: inline-block;
-  width: 300px;
-  border: 1px solid black;
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
 }

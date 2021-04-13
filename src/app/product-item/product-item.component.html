@@ -1,6 +1,8 @@
-<!-- if I want to put dinamical value as source I will use [src]=""  -->
-<img [src]="product.imageUrl">
-<div>
-  <div>Name: {{product.name}}</div>
-  <button (click)="addToCart($event)">Add to cart</button>
+<div class="product-item">
+  <!-- if I want to put dinamical value as source I will use [src]=""  -->
+  <img [src]="product.imageUrl">
+  <div>
+    <div>Name: {{product.name}}</div>
+    <button (click)="addToCart($event)">Add to cart</button>
+  </div>
 </div>

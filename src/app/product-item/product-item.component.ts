@@ -15,6 +15,7 @@ export class ProductItemComponent implements OnInit, OnDestroy {
 
   //Something, we still don't know when, MAYBE the child component will transfer some info to the father component
   @Output() addedToCart = new EventEmitter<string>();
+  @Output() addedToCartN = new EventEmitter<string>();
 
   intervalId;
 
@@ -36,6 +37,7 @@ export class ProductItemComponent implements OnInit, OnDestroy {
       console.log(event);
   //emitting the id
       this.addedToCart.emit(this.product.id);
+      this.addedToCartN.emit(this.product.name);
 	}
 
 }

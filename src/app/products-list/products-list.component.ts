@@ -41,4 +41,7 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
   updateShoppingCart(productId: string) {
     console.log(productId);
   }
+  updateShoppingCartN(productName: string) {
+    console.log(productName);
+  }
 }

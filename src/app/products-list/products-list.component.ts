@@ -15,6 +15,8 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
   //accessing the desired child component through the father component
   @ViewChild(ProductItemComponent) child: ProductItemComponent;
 
+  numberOfAddedProducts = 0;
+
   constructor(private productsService: ProductsService) {
   }
 
@@ -40,7 +42,9 @@ export class ProductsListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   updateShoppingCart(productId: string) {
     console.log(productId);
+    this.numberOfAddedProducts += 1;
   }
+
   updateShoppingCartN(productName: string) {
     console.log(productName);
   }

@@ -10,6 +10,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { CartComponent } from './cart/cart.component';
 import { ColorDirective } from './color.directive';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CustomDirectiveComponent } from './custom-directive/custom-directive.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

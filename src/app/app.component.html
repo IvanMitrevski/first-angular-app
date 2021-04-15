@@ -8,5 +8,16 @@
   <app-custom-directive></app-custom-directive>
 </div>
 
+<div class="content">
+  <input type="text" [(ngModel)]="name" placeholder="Enter a title"/>
+<!--
+  <textarea
+    type="text"
+    [(ngModel)]="title"
+    placeholder="Enter a title"></textarea> -->
+
+  <h2 *ngIf="name">{{name}}</h2>
+</div>
+
 
 <app-footer></app-footer>

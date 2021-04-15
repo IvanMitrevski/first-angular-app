@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { CartComponent } from './cart/cart.component';
+import { ColorDirective } from './color.directive';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CartComponent } from './cart/cart.component';
     FooterComponent,
     ProductsListComponent,
     ProductItemComponent,
-    CartComponent
+    CartComponent,
+    ColorDirective,
+    CustomDirectiveComponent
   ],
   imports: [
     BrowserModule,

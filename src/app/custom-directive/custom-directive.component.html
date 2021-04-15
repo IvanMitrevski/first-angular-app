@@ -1,0 +1,8 @@
+<div>
+  <input type="radio" name="colors" (click)="color='red'">Red
+  <input type="radio" name="colors" (click)="color='blue'">Blue
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+</div>
+
+<h1 [colorDirective]="color">Colored text</h1>
+

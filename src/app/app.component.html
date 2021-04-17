@@ -19,5 +19,59 @@
   <h2 *ngIf="name">{{name}}</h2>
 </div>
 
+<div class="content">
+
+  <div class="content">
+      <h3>LowerCase Pipe</h3>
+      <!-- ngNonBindable is used to show a pure text, no function will change that -->
+      <p ngNonBindable>{{ 'IVAN' | lowercase}}</p>
+      <p>{{ 'IVAN' | lowercase}}</p>
+  </div>
+
+  <div class="content">
+      <h3>LowerCase Pipe</h3>
+
+      <p ngNonBindable>{{ product }}</p>
+      <p>{{ product }}</p>
+
+      <p ngNonBindable>{{ product | json }}</p>
+      <p>{{ product | json }}</p>
+    </div>
+
+    <div class="content">
+      <h3>LowerCase Pipe</h3>
+
+      <!-- starts from 1st and goes to 3rd element -> will show 2,3 -->
+      <p ngNonBindable>{{ [1,2,3,4,5,6] | slice:1:3 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:1:3 }}</p>
+
+      <!-- starts from 3rd element and gets all the rest -> 3,4,5,6 -->
+      <p ngNonBindable>{{ [1,2,3,4,5,6] | slice:2 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:2 }}</p>
+
+      <!-- starts from the 3rd element and goes to the last element-1(without the last) -> 3,4,5 -->
+      <p ngNonBindable>{{ [1,2,3,4,5,6] | slice:2:-1 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:2:-1 }}</p>
+
+    </div>
+
+    <div class="content">
+      <h3>Date Pipe</h3>
+
+      <!-- Default format: output 'Apr 17, 2021' -->
+      <p ngNonBindable>{{ today | date }}</p>
+      <p *ngIf="today">{{ today | date }}</p>
+
+      <!-- fullDate format: output 'Saturday, Apr 17, 2021' -->
+      <p ngNonBindable>{{ today | date:'fullDate' }}</p>
+      <p *ngIf="today">{{ today | date:'fullDate' }}</p>
+
+      <!-- shortTime format: output 'Apr 17, 2021' -->
+      <p ngNonBindable>{{ today | date:'shortTime' }}</p>
+      <p *ngIf="today">The time is: {{ today | date:'shortTime' }}</p>
+
+    </div>
+</div>
+
 
 <app-footer></app-footer>
